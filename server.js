@@ -112,7 +112,7 @@ function publicLayout(data, title, body) {
     <title>${escapeHtml(title)} | ${escapeHtml(profile.name)}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preload" as="image" href="/assets/hero-md-ubaidullah-1200.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="/assets/theme/men.webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
@@ -175,8 +175,8 @@ function hero(data) {
     <div class="hero-media">
       <div class="paint-frame">
         <picture>
-          <source srcset="/assets/hero-md-ubaidullah-800.webp 800w, /assets/hero-md-ubaidullah-1200.webp 1200w" sizes="(max-width: 720px) 88vw, 46vw" type="image/webp" />
-          <img src="/assets/hero-md-ubaidullah.png" width="1200" height="600" loading="eager" decoding="async" fetchpriority="high" alt="Professional portfolio visual" />
+          <source srcset="/assets/theme/men.webp" type="image/webp" />
+          <img src="/assets/theme/men.jpg" width="968" height="950" loading="eager" decoding="async" fetchpriority="high" alt="Professional portfolio visual" />
         </picture>
       </div>
       <a class="hire-float" href="/contact">Hire Me</a>
