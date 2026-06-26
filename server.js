@@ -56,6 +56,16 @@ function send(res, status, body, type = "text/html; charset=utf-8") {
   res.end(body);
 }
 
+function sendWithHeaders(res, status, body, type, headers = {}) {
+  res.writeHead(status, {
+    "Content-Type": type,
+    "X-Content-Type-Options": "nosniff",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    ...headers
+  });
+  res.end(body);
+}
+
 function redirect(res, location) {
   res.writeHead(303, { Location: location });
   res.end();
@@ -101,6 +111,7 @@ function publicLayout(data, title, body) {
     <title>${escapeHtml(title)} | ${escapeHtml(profile.name)}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/assets/hero-md-ubaidullah-1200.webp" fetchpriority="high" />
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
@@ -146,7 +157,10 @@ function hero(data) {
       </div>
     </div>
     <div class="hero-media">
-      <img src="/assets/hero-md-ubaidullah.png" alt="Professional portfolio visual" />
+      <picture>
+        <source srcset="/assets/hero-md-ubaidullah-800.webp 800w, /assets/hero-md-ubaidullah-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 48vw" type="image/webp" />
+        <img src="/assets/hero-md-ubaidullah.png" width="1200" height="600" loading="eager" decoding="async" fetchpriority="high" alt="Professional portfolio visual" />
+      </picture>
       <div class="hero-badge"><strong>5+</strong><span>Professional skill areas</span></div>
     </div>
   </section>`;
@@ -437,7 +451,10 @@ function serveAsset(req, res, pathname) {
     return true;
   }
   const ext = path.extname(file);
-  send(res, 200, fs.readFileSync(file), contentTypes[ext] || "application/octet-stream");
+  const isStaticAsset = [".png", ".jpg", ".jpeg", ".webp", ".svg", ".ico", ".woff", ".woff2"].includes(ext);
+  sendWithHeaders(res, 200, fs.readFileSync(file), contentTypes[ext] || "application/octet-stream", {
+    "Cache-Control": isStaticAsset ? "public, max-age=2592000, immutable" : "public, max-age=300"
+  });
   return true;
 }
 
