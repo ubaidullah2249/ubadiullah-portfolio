@@ -101,26 +101,28 @@ function publicLayout(data, title, body) {
     <title>${escapeHtml(title)} | ${escapeHtml(profile.name)}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/"><span>MD</span> Ubaidullah</a>
-      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
-      <nav class="site-nav" id="site-nav">
-        <a href="/services">সেবা</a>
-        <a href="/portfolio">কাজ</a>
-        <a href="/blog">ব্লগ</a>
-        <a href="/about">পরিচিতি</a>
-        <a href="/contact">যোগাযোগ</a>
-      </nav>
-    </header>
-    <main>${body}</main>
-    <footer class="site-footer">
-      <p>© ${new Date().getFullYear()} ${escapeHtml(profile.name)}. All rights reserved.</p>
-      <a href="/admin">Admin</a>
-    </footer>
+    <div class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/"><span>MD</span> Ubaidullah</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav"><span></span><span></span></button>
+        <nav class="site-nav" id="site-nav">
+          <a href="/services">সেবা</a>
+          <a href="/portfolio">কাজ</a>
+          <a href="/blog">ব্লগ</a>
+          <a href="/about">পরিচিতি</a>
+          <a href="/contact">যোগাযোগ</a>
+        </nav>
+      </header>
+      <main>${body}</main>
+      <footer class="site-footer">
+        <p>© ${new Date().getFullYear()} ${escapeHtml(profile.name)}. All rights reserved.</p>
+        <a href="/admin">Admin</a>
+      </footer>
+    </div>
     <script src="/script.js"></script>
   </body>
 </html>`;
