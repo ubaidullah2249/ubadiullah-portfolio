@@ -102,6 +102,7 @@ function parseBody(req) {
 
 function publicLayout(data, title, body) {
   const profile = data.profile;
+  const pageClass = `${title.toLowerCase().replace(/[^a-z0-9]+/g, "-")}-page`;
   return `<!doctype html>
 <html lang="bn">
   <head>
@@ -115,7 +116,7 @@ function publicLayout(data, title, body) {
     <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="/styles.css" />
   </head>
-  <body>
+  <body class="${pageClass}">
     <div class="page-shell">
       <header class="site-header">
         <a class="brand" href="/"><span>MD</span> Ubaidullah</a>
@@ -142,8 +143,23 @@ function publicLayout(data, title, body) {
 function hero(data) {
   const profile = data.profile;
   return `<section class="hero">
+    <aside class="home-rail" aria-label="Homepage shortcuts">
+      <a class="rail-avatar" href="/about" aria-label="About MD Ubaidullah">MD</a>
+      <nav>
+        <a href="/blog" aria-label="Blog">▤</a>
+        <a href="/portfolio" aria-label="Portfolio">▣</a>
+        <a href="/services" aria-label="Services">❝</a>
+        <a href="/contact" aria-label="Contact">☎</a>
+      </nav>
+      <div class="rail-social">
+        <span>Follow</span>
+        <a href="/contact" aria-label="Facebook">f</a>
+        <a href="/contact" aria-label="LinkedIn">in</a>
+        <a href="/contact" aria-label="WhatsApp">wa</a>
+      </div>
+    </aside>
     <div class="hero-content">
-      <p class="eyebrow">Independent Digital Professional</p>
+      <p class="hello-badge"><span>Hello!</span> welcome</p>
       <h1>${escapeHtml(profile.name)}</h1>
       <p class="hero-lead">${escapeHtml(profile.intro)}</p>
       <div class="hero-tags">
@@ -152,16 +168,18 @@ function hero(data) {
         <span>Cyber Security</span>
       </div>
       <div class="hero-actions">
-        <a class="button primary" href="/contact">কাজের জন্য যোগাযোগ</a>
-        <a class="button ghost" href="/portfolio">কাজ দেখুন</a>
+        <a class="button primary" href="/portfolio">কাজ দেখুন</a>
+        <a class="button pink" href="/contact">Hire Me</a>
       </div>
     </div>
     <div class="hero-media">
-      <picture>
-        <source srcset="/assets/hero-md-ubaidullah-800.webp 800w, /assets/hero-md-ubaidullah-1200.webp 1200w" sizes="(max-width: 720px) 90vw, 48vw" type="image/webp" />
-        <img src="/assets/hero-md-ubaidullah.png" width="1200" height="600" loading="eager" decoding="async" fetchpriority="high" alt="Professional portfolio visual" />
-      </picture>
-      <div class="hero-badge"><strong>5+</strong><span>Professional skill areas</span></div>
+      <div class="paint-frame">
+        <picture>
+          <source srcset="/assets/hero-md-ubaidullah-800.webp 800w, /assets/hero-md-ubaidullah-1200.webp 1200w" sizes="(max-width: 720px) 88vw, 46vw" type="image/webp" />
+          <img src="/assets/hero-md-ubaidullah.png" width="1200" height="600" loading="eager" decoding="async" fetchpriority="high" alt="Professional portfolio visual" />
+        </picture>
+      </div>
+      <a class="hire-float" href="/contact">Hire Me</a>
     </div>
   </section>`;
 }
