@@ -1,0 +1,70 @@
+{
+  "profile": {
+    "name": "MD Ubaidullah",
+    "title": "Web Developer, Freelancer, Video Editor, Journalist, Cyber Security Specialist",
+    "intro": "ওয়েব ডেভেলপমেন্ট, ফ্রিল্যান্সিং, ভিডিও এডিটিং, সাংবাদিকতা এবং সাইবার সিকিউরিটি নিয়ে কাজ করি।",
+    "email": "hello@ubaidullah.com.bd",
+    "phone": "",
+    "location": "Bangladesh",
+    "bio": "আমি MD Ubaidullah। Website development, freelancing, video editing, journalism এবং cyber security নিয়ে practical কাজ করি। লক্ষ্য হলো professional, সহজে ব্যবহারযোগ্য এবং বিশ্বাসযোগ্য digital presence তৈরি করা।",
+    "facebook": "",
+    "linkedin": "",
+    "github": "",
+    "youtube": ""
+  },
+  "services": [
+    {
+      "id": "web-development",
+      "title": "Web Development",
+      "summary": "দ্রুত, responsive এবং business-focused website তৈরি ও maintenance।",
+      "details": "Portfolio, business website, landing page, SEO-friendly structure এবং ongoing improvement।"
+    },
+    {
+      "id": "freelancing-support",
+      "title": "Freelancing Support",
+      "summary": "Client communication, project planning, delivery এবং online service workflow।",
+      "details": "Freelance profile, service packaging, proposal workflow এবং project delivery support।"
+    },
+    {
+      "id": "video-editing",
+      "title": "Video Editing",
+      "summary": "Social media, news, promo এবং personal brand-এর জন্য polished video edit।",
+      "details": "Short-form content, YouTube video, promo, news package এবং brand storytelling।"
+    },
+    {
+      "id": "journalism",
+      "title": "Journalism",
+      "summary": "তথ্য যাচাই, রিপোর্টিং, writing এবং digital media presentation।",
+      "details": "Research, interview, digital report, article writing এবং newsroom-style presentation।"
+    },
+    {
+      "id": "cyber-security",
+      "title": "Cyber Security",
+      "summary": "Basic security audit, awareness, account protection এবং safe browsing guidance।",
+      "details": "Account safety, phishing awareness, privacy checklist এবং small business security guidance।"
+    }
+  ],
+  "projects": [
+    {
+      "id": "personal-brand-website",
+      "title": "Personal Brand Website",
+      "category": "Web Development",
+      "summary": "Professional portfolio, blog and contact-focused website for personal branding.",
+      "details": "A premium website foundation with dynamic content, admin panel and SEO-ready pages.",
+      "url": "https://ubaidullah.com.bd",
+      "featured": true
+    }
+  ],
+  "posts": [
+    {
+      "id": "secure-online-presence",
+      "title": "নিরাপদ online presence তৈরির শুরু",
+      "category": "Cyber Security",
+      "summary": "Personal brand বা business website চালু করার সময় security, trust এবং content structure কেন গুরুত্বপূর্ণ।",
+      "content": "একটি website শুধু design নয়; এটি trust, communication এবং long-term digital identity তৈরি করে। Domain, SSL, clean content, regular update এবং account security শুরু থেকেই ঠিক রাখা দরকার।",
+      "published": true,
+      "createdAt": "2026-06-26"
+    }
+  ],
+  "messages": []
+}

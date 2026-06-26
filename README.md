@@ -1,14 +1,23 @@
 # MD Ubaidullah Portfolio
 
-Static Bangla portfolio site for `ubaidullah.com.bd`.
+Professional Bangla portfolio website for `ubaidullah.com.bd` with a lightweight Node.js admin panel.
 
-## Files
+## Features
 
-- `index.html` - page content
-- `styles.css` - responsive styling
-- `script.js` - mobile navigation and footer year
-- `assets/hero-md-ubaidullah.png` - generated hero visual
+- Public pages: Home, About, Services, Portfolio, Blog, Contact
+- Admin panel: Dashboard, Blog posts, Projects, Services, Messages, Settings
+- Persistent JSON content store at `data/site.json`
+- No external npm dependencies
 
-## Preview
+## Run
 
-Open `index.html` in a browser, or serve the folder with any static web server.
+```bash
+PORT=8088 \
+ADMIN_EMAIL=admin@ubaidullah.com.bd \
+ADMIN_PASSWORD=change-this-password \
+node server.js
+```
+
+## Admin
+
+Visit `/admin` and sign in with the configured `ADMIN_EMAIL` and `ADMIN_PASSWORD`.
