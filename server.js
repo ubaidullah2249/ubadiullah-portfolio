@@ -130,15 +130,23 @@ function hero(data) {
   const profile = data.profile;
   return `<section class="hero">
     <div class="hero-content">
-      <p class="eyebrow">Portfolio / Bangladesh</p>
+      <p class="eyebrow">Independent Digital Professional</p>
       <h1>${escapeHtml(profile.name)}</h1>
       <p class="hero-lead">${escapeHtml(profile.intro)}</p>
+      <div class="hero-tags">
+        <span>Web Development</span>
+        <span>Video Editing</span>
+        <span>Cyber Security</span>
+      </div>
       <div class="hero-actions">
         <a class="button primary" href="/contact">কাজের জন্য যোগাযোগ</a>
         <a class="button ghost" href="/portfolio">কাজ দেখুন</a>
       </div>
     </div>
-    <div class="hero-media"><img src="/assets/hero-md-ubaidullah.png" alt="Professional portfolio visual" /></div>
+    <div class="hero-media">
+      <img src="/assets/hero-md-ubaidullah.png" alt="Professional portfolio visual" />
+      <div class="hero-badge"><strong>5+</strong><span>Professional skill areas</span></div>
+    </div>
   </section>`;
 }
 
@@ -169,6 +177,10 @@ function homePage(data) {
       <div><strong>${data.projects.length}+</strong><span>Project Entries</span></div>
       <div><strong>${data.posts.filter((post) => post.published).length}+</strong><span>Published Blogs</span></div>
       <div><strong>Admin</strong><span>Content Managed</span></div>
+    </section>
+    <section class="intro-strip">
+      <p>Premium personal brand website with blog, portfolio, service pages and admin-controlled content.</p>
+      <a href="/about">পরিচিতি জানুন</a>
     </section>
     <section class="section">
       <div class="section-heading"><p class="eyebrow">Services</p><h2>যে কাজগুলো করি</h2></div>
